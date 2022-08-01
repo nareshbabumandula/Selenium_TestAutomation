@@ -1,6 +1,5 @@
 package com.selenium.scripts;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -32,8 +31,7 @@ public class BrowserTest {
 		driver.navigate().back();
 		driver.navigate().forward();
 		driver.navigate().refresh();
-		System.out.println(driver.getPageSource());
-		
+		//System.out.println(driver.getPageSource());
 		//driver.findElement(By.id("user")).sendKeys("ramesh");
 		//driver.findElement(By.id("pass")).sendKeys("Secure*1234");
 		Thread.sleep(4000);
