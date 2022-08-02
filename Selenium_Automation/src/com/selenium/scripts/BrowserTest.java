@@ -44,6 +44,6 @@ public class BrowserTest {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		launchBrowser(" EDGE ");
+		launchBrowser(" chrome ");
 	}
 }
