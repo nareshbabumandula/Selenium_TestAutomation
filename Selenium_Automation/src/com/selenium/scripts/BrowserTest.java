@@ -3,14 +3,14 @@ package com.selenium.scripts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 public class BrowserTest {
 
 	static WebDriver driver;
 	
-	static void launchBrowser(String browser) throws InterruptedException {
-		switch (browser.toLowerCase().trim()) {
+	static void launchBrowser(String browser) throws InterruptedException  {
+		switch (browser) { 
 		case "edge":
 		    System.setProperty("webdriver.edge.driver", "./browsers/msedgedriver.exe");
 			driver = new EdgeDriver();
@@ -19,10 +19,7 @@ public class BrowserTest {
 		    System.setProperty("webdriver.chrome.driver", "./browsers/chromedriver.exe");
 			driver = new ChromeDriver();
 		    break;
-		case "ff": case "firefox":
-		    System.setProperty("webdriver.gecko.driver", "./browsers/geckodriver.exe");
-			driver = new FirefoxDriver();
-		    break;
+		
 		default:
 			System.out.println("Invalid browser");
 			break;
@@ -44,6 +41,6 @@ public class BrowserTest {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		launchBrowser(" EDGE ");
+		launchBrowser("edge");
 	}
 }
