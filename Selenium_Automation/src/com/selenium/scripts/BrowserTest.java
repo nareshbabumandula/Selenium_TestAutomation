@@ -9,15 +9,22 @@ public class BrowserTest {
 
 	static WebDriver driver;
 	
+	
 	static void launchBrowser(String browser) throws InterruptedException {
+		String os = System.getProperty("os.name").toLowerCase();
+		
 		switch (browser.toLowerCase().trim()) {
 		case "edge":
 		    System.setProperty("webdriver.edge.driver", "./browsers/msedgedriver.exe");
 			driver = new EdgeDriver();
 		    break;
 		case "chrome":
-		    System.setProperty("webdriver.chrome.driver", "./browsers/chromedriver.exe");
-			driver = new ChromeDriver();
+			if(os.contains("mac")) {
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/browsers/chromedriver");
+			}else {
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+  "\\browsers\\chromedriver.exe");
+			}
+		    driver = new ChromeDriver();
 		    break;
 		case "ff": case "firefox":
 		    System.setProperty("webdriver.gecko.driver", "./browsers/geckodriver.exe");
@@ -44,6 +51,6 @@ public class BrowserTest {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		launchBrowser(" EDGE ");
+		launchBrowser(" chrome ");
 	}
 }
