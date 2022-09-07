@@ -16,6 +16,7 @@ public class StringMethodsTest {
 		System.out.println(str.concat(" ").concat("welcome to core java"));
 		System.out.println(str.contains("world"));
 		System.out.println(str.indexOf('h'));
+		System.out.println(str.endsWith("world"));
 		
 	}
 
