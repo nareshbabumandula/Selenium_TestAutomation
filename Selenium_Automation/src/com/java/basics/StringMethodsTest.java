@@ -17,7 +17,23 @@ public class StringMethodsTest {
 		System.out.println(str.contains("world"));
 		System.out.println(str.indexOf('h'));
 		System.out.println(str.endsWith("world"));
+		System.out.println(str.lastIndexOf('l'));
+		System.out.println(str.startsWith("hello"));
+		System.out.println(str.isEmpty());
+		System.out.println(str.isBlank());
+		System.out.println(str.replace("hello", "hi"));
+		System.out.println(str.substring(0, 4));
+		String st = "View invoices edit or make payments add or change subscriptions";
+		String asText[] = st.split(" ");
+		System.out.println(asText[0]);
+		System.out.println(asText[1]);
+		System.out.println(asText[2]);
+		System.out.println(st.join(">", asText));
 		
+		for(String element : asText) {
+			System.out.println(element);
+		}
+			
 	}
 
 }
