@@ -24,7 +24,6 @@ public class LocatorsTest extends Homepage{
 		driver.findElement(By.className("txt_log")).sendKeys("Ravi");
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Sample Forms")).click();
-		driver.findElement(sampleForms).click();
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input[name='email_to[]']")).click();
 		Thread.sleep(2000);

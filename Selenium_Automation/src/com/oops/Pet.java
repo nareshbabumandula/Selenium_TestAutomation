@@ -2,9 +2,10 @@ package com.oops;
 
 public class Pet extends Animal{
 	
-	String petType="dog";
-	int maxage = 10;
+	public String petType="dog";
+	public int maxage = 10;
 	
+	//Method or behavior
 	public void getPetType() {
 		System.out.println("Pet type is  : " + petType);
 	}

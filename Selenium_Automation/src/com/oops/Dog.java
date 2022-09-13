@@ -12,6 +12,7 @@ public class Dog extends Pet{
 		// Classname refName = new Constructor();
 		Dog d = new Dog();
 		System.out.println(d.breed);
+		d.getBreed();
 		System.out.println(d.petType);
 		System.out.println(d.maxage);
 	    d.eat();
