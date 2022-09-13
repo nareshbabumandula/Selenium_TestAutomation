@@ -21,7 +21,7 @@ public class MethodOverloadTest {
 	}
 			
 	void addition(int a, int b) {
-		int c=a+b;
+		int c=a+b; 
 		System.out.println("Addition of integer a and b is : " +c);
 	}
 	
