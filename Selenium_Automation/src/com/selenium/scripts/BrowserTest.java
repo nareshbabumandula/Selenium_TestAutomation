@@ -47,6 +47,7 @@ public class BrowserTest {
 		//driver.findElement(By.id("user")).sendKeys("ramesh");
 		//driver.findElement(By.id("pass")).sendKeys("Secure*1234");
 		Thread.sleep(4000);
+		//driver.switchTo().newWindow(WindowType.TAB);
 		driver.quit();
 	}
 	
