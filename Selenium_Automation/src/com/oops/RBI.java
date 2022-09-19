@@ -6,7 +6,7 @@ public interface RBI {
 	void loans();
 	void minDeposit();
 	void maxDeposit();
-	
+			
 	static void minWithDrawl() {
 		System.out.println("Minimum withdrawl amount is 100 rupees");
 	}
