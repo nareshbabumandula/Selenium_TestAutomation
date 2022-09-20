@@ -25,6 +25,11 @@ public class MethodOverloadTest {
 		System.out.println("Addition of integer a and b is : " +c);
 	}
 	
+	void addition(int a, double b) {
+		double c = a+b;
+		System.out.println("Addition integer a and double b is : " +c);
+	}
+		
 	void addition(int a, int b, int c) {
 		int d=a+b+c;
 		System.out.println("Addition of a, b and c is : " +d);
