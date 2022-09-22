@@ -6,6 +6,7 @@ public class Generic {
 	private String username="naresh";
 	private String password="Secure*123";
 	
+	//Behavior or method
 	public String getUsername() {
 		return username;
 	}
