@@ -16,7 +16,7 @@ public class TC001 {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\browsers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // Implicit wait
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // Implicit wait
 		driver.get("https://www.mycontactform.com/");
 		Thread.sleep(3000);
 	}
