@@ -18,7 +18,7 @@ public class TC001 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // Implicit wait
 		driver.get("https://www.mycontactform.com/");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 	
 	public static void verifyLogin() throws InterruptedException {
