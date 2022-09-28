@@ -1,5 +1,7 @@
 package com.selenium.scripts;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +16,7 @@ public class LocatorsTest extends Homepage{
 		System.setProperty("webdriver.chrome.driver", "./browsers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get("https://www.mycontactform.com");
 		driver.findElement(By.id("user")).sendKeys("rakesh");
 		Thread.sleep(2000);
