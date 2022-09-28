@@ -35,7 +35,7 @@ public class TC001 {
 	public static void main(String[] args) throws InterruptedException {
 		accessSite();
 		verifyLogin();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.quit(); // Terminate the browser
 		
 	}
