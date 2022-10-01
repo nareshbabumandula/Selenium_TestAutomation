@@ -14,8 +14,6 @@ public abstract class Pvr  extends Theatre {
 		System.out.println("ticket booking facility available");
 	}
 		public static void main(String[] args) {
-			Pvr p= new Pvr();
-			p.carparking();
 			
 		
 	}
