@@ -18,8 +18,8 @@ public class LocatorsTest extends Homepage{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.get("https://www.mycontactform.com");
-		driver.findElement(By.id("user")).sendKeys("rakesh");
-		Thread.sleep(2000);
+		driver.findElement(By.id("user")).sendKeys("testuser");
+		Thread.sleep(3000);
 		driver.findElement(By.name("pass")).sendKeys("Secure*1234");
 		Thread.sleep(2000);
 		driver.findElement(By.className("txt_log")).clear();
