@@ -1,9 +1,11 @@
 package com.selenium.scripts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserTest {
 
@@ -46,6 +48,7 @@ public class BrowserTest {
 		//System.out.println(driver.getPageSource());
 		//driver.findElement(By.id("user")).sendKeys("ramesh");
 		//driver.findElement(By.id("pass")).sendKeys("Secure*1234");
+		driver.findElement(By.id("user")).sendKeys("test");
 		Thread.sleep(4000);
 		//driver.switchTo().newWindow(WindowType.TAB);
 		driver.quit();
