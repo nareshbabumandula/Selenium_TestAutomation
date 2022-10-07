@@ -31,14 +31,28 @@ public class DataTypes {
 		System.out.println(marks[1]);
 		System.out.println(marks.length);
 		
+		// Wrapper classes exists for all the 8 primitive data types e.g. Byte, Integer, Short, Double, Boolean
+		// Character, Float, Long etc
+		
+		short s1 = 28654;
+		//Autoboxing: Converting primitive data type into object type
+		Short shortObj=s1;
+		System.out.println("Min value for short is : " + shortObj.MIN_VALUE);
+		System.out.println("Max value for short is : " + shortObj.MAX_VALUE);
+		
+		//Unboxing: Converting object type to its primitive data type
+		short s2 = shortObj;
+		System.out.println("Short value is : " + s2);
+					
 		// Casting : Narrowing and Widening
-		byte b1=125;
-		int i1=b1; // implicit casting (widening) or up casting
+		byte b1=127; 
+		int i1=b1; // implicit casting (widening)
 		System.out.println(b1 + " " + i1);
 		
-	    short s1=3271;
-	    byte b3 =(byte)s1; // explicit casting or narrowing or down casting
-	    System.out.println(s1 + " " + b3);
+		short s3=3271;
+	    byte b3 =(byte)s3; // explicit casting or narrowing
+	    System.out.println(s3 + " " + b3);
+	  
 	}
 
 }

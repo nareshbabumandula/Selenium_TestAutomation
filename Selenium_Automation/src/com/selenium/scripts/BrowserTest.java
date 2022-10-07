@@ -11,7 +11,6 @@ public class BrowserTest {
 
 	static WebDriver driver;
 	
-	
 	static void launchBrowser(String browser) throws InterruptedException {
 		String os = System.getProperty("os.name").toLowerCase();
 		
@@ -46,8 +45,9 @@ public class BrowserTest {
 		driver.navigate().forward();
 		driver.navigate().refresh();
 		//System.out.println(driver.getPageSource());
-		//driver.findElement(By.id("user")).sendKeys("ramesh");
-		//driver.findElement(By.id("pass")).sendKeys("Secure*1234");
+		driver.findElement(By.id("user")).sendKeys("ramesh");
+		driver.findElement(By.id("pass")).sendKeys("Secure*1234");
+		driver.findElement(By.id("user")).clear();
 		driver.findElement(By.id("user")).sendKeys("test");
 		Thread.sleep(4000);
 		//driver.switchTo().newWindow(WindowType.TAB);
