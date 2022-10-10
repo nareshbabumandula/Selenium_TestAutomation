@@ -26,10 +26,44 @@ public class DataTypes {
 		String str = "hello";
 		System.out.println(str);
 		
-		String marks[] = {"sai","akhil","raju","himaja","saran","jaipal","vikas"};
-		System.out.println(marks[0]);
-		System.out.println(marks[1]);
-		System.out.println(marks.length);
+		//Array - A group of elements of same type can be stored
+		// We must [] to declare an array
+		// The values in an array are ordered and can be accessed based on its index (starts from 0)
+		String names[] = {"sai","akhil","raju","himaja","saran","jaipal","vikas"};
+		System.out.println(names[0]);
+		System.out.println(names[1]);
+		System.out.println(names[6]);
+		System.out.println(names.length);
+		
+		// One dimensional array declaration
+		int score[];
+		int[] rating;
+		
+		// Initialize an array
+		score = new int[3]; // allocating memory to array
+		score[0]=90; // store values
+		score[1]=60;
+		score[2]=50;
+		
+		System.out.println(score[0]);
+		System.out.println(score[1]);
+		System.out.println(score[2]);
+		
+		int prices[] = new int[5]; // Initialize and allocate memory
+		
+		int cost[] = new int[] {10,50,70,80,40}; // Array literal - If we know the size and variables of an array
+		int rate[] = {50, 90, 70, 30, 40, 20}; // There is no need of new int[] in the latest versions of java
+	
+		// To access each element/value from an array
+		for (int j = 0; j < rate.length; j++) {
+			System.out.println("Value is : "+ rate[j]);
+		}
+		
+		// foreach loop
+		System.out.println("For each loop starts");
+		for (int value : rate) {
+			System.out.println("Value is : "+ value);
+		}
 		
 		// Wrapper classes exists for all the 8 primitive data types e.g. Byte, Integer, Short, Double, Boolean
 		// Character, Float, Long etc
@@ -52,7 +86,11 @@ public class DataTypes {
 		short s3=3271;
 	    byte b3 =(byte)s3; // explicit casting or narrowing
 	    System.out.println(s3 + " " + b3);
-	  
+	    
+	    DataTypes dt = new DataTypes();
+	    System.out.println(dt.hashCode());
+	    DataTypes dt1 = new DataTypes();
+	    System.out.println(dt1.hashCode());
 	}
 
 }
