@@ -37,6 +37,7 @@ public class LocatorsTest extends Homepage{
 		driver.findElement(By.partialLinkText("Feat")).click();
 		Thread.sleep(4000);
 		driver.quit(); // Terminate the browser
+		
 	}
 
 	public static void main(String[] args) throws InterruptedException {

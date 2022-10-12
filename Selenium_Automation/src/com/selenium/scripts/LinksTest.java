@@ -1,17 +1,21 @@
 package com.selenium.scripts;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class BrowserTest {
+public class LinksTest {
 
 	static WebDriver driver;
 	
-	static void launchBrowser(String browser) throws InterruptedException {
+	static void getLinkNames(String browser) throws InterruptedException {
 		String os = System.getProperty("os.name").toLowerCase();
 		
 		switch (browser.toLowerCase().trim()) {
@@ -37,24 +41,19 @@ public class BrowserTest {
 		}
 		driver.get("https://www.mycontactform.com/");
 		driver.manage().window().maximize();
-		System.out.println(driver.getCurrentUrl());
-		System.out.println(driver.getTitle());
-		driver.navigate().to("https://www.mycontactform.com/samples.php");
-		System.out.println(driver.getCurrentUrl());
-		driver.navigate().back();
-		driver.navigate().forward();
-		driver.navigate().refresh();
-		//System.out.println(driver.getPageSource());
-		driver.findElement(By.id("user")).sendKeys("ramesh");
-		driver.findElement(By.id("pass")).sendKeys("Secure*1234");
-		driver.findElement(By.id("user")).clear();
-		driver.findElement(By.id("user")).sendKeys("test");
-		Thread.sleep(4000);
-		//driver.switchTo().newWindow(WindowType.TAB);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		List<WebElement> nLinks = driver.findElements(By.tagName("a"));
+		
+		for (int i = 0; i < nLinks.size(); i++) {
+			System.out.println(nLinks.get(i).getText());
+		}
+		
+		//nLinks.forEach((link)->link.getText());
 		driver.quit();
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		launchBrowser(" chrome ");
+		getLinkNames(" chrome ");
 	}
 }
