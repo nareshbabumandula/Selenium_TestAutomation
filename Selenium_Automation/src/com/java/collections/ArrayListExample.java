@@ -1,6 +1,7 @@
 package com.java.collections;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListExample {
@@ -30,6 +31,13 @@ public class ArrayListExample {
 		System.out.println(alist.isEmpty());
 		System.out.println(alist.size());
 		System.out.println(alist.remove("jaipal"));
+		
+		System.out.println("Iterator on Arraylist starts");
+		Iterator<String> iter = alist.iterator();
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		System.out.println("Iterator on Arraylist ends");
 		
 		for (int i = 0; i < alist.size(); i++) {
 			System.out.println(alist.get(i));
