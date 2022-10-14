@@ -22,6 +22,7 @@ public class ArrayListExample {
 		alist.add("priyanka");
 		alist.add("padma");
 		alist.add(null);
+	    alist.set(0,"prasanth");
 		
 		System.out.println(alist.get(0));
 		System.out.println(alist.get(1));

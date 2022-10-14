@@ -21,7 +21,12 @@ public class VectorExample {
 		vec.add("renuka");
 		vec.add("priyanka");
 		vec.add("padma");
+		vec.add("prashanth");
 		vec.add(null);
+			
+		System.out.println("First element is : " + vec.firstElement());
+		System.out.println("Last element is : " + vec.lastElement());
+		System.out.println("Capacity is : " + vec.capacity());
 		
 		System.out.println(vec.get(0));
 		System.out.println(vec.get(1));
