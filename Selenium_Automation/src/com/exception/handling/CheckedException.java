@@ -1,22 +1,37 @@
 package com.exception.handling;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class CheckedException {
 
-    public void checkedExceptionExample() throws FileNotFoundException {
-        String strFilePath = "C:\\Users\\nares\\Documents\\GitHub\\Selenium_Jan22\\Files\\Data123.txt";
-        File file = new File(strFilePath);
-        FileInputStream fis = new FileInputStream(file);
-        System.out.println("After exception..!");
+    public void checkedExceptionExample() throws IOException{
+        String strFilePath = "./files/data.txt";
+        FileReader fr = new FileReader(strFilePath);
+        
+        int i;
+        while((i=fr.read())!=-1) {
+        	System.out.println((char)i);
+        }
+        
+        BufferedReader br = new BufferedReader(fr);
+        String line;
+        
+        while((line=br.readLine())!=null) {
+        	System.out.println(line);
+        }
+        
     }
 
     public void checkedExceptionTryCatchExample() {
-        try {
+        boolean bFlag=false;
+    	try {
             // try block
-            String strFilePath = "C:\\Users\\nares\\Documents\\GitHub\\Selenium_Jan22\\Files\\Data123.txt";
+            String strFilePath = "./files/data.txt";
             File file = new File(strFilePath);
             FileInputStream fis = new FileInputStream(file);
             int i = fis.read();
@@ -24,17 +39,23 @@ public class CheckedException {
             while((i=fis.read())!=-1){
                 System.out.println((char)i);
             }
+            bFlag=true;
          }catch(Exception e){
             // catch block
             e.printStackTrace();
             System.out.println("After exception..!");
         }finally {
-            System.out.println("Execution completed");
+        	if (bFlag) {
+				System.out.println("Successfully read the file");
+			} else {
+				System.out.println("Failed to read the file");
+			}
+           
         }
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         CheckedException ce = new CheckedException();
         //ce.checkedExceptionExample();
         ce.checkedExceptionTryCatchExample();
