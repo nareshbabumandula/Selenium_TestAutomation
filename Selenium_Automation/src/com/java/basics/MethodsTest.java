@@ -2,6 +2,13 @@ package com.java.basics;
 
 public class MethodsTest {
 	
+	String strName;
+	
+	public MethodsTest(String strName) {
+		super();
+		this.strName = strName;
+	}
+
 	// user defined methods
 	// Method without arguments and without return type
 	void m1() {
@@ -34,7 +41,8 @@ public class MethodsTest {
 	}
 		
 	public static void main(String[] args) {
-		MethodsTest mt = new MethodsTest();
+		MethodsTest mt = new MethodsTest("John Smith");
+		System.out.println(mt.strName);
 		int x=100; // plain java expression
 		int y=200;
 		int z=300;
@@ -50,6 +58,8 @@ public class MethodsTest {
 		System.out.println(output[3]);
 		System.out.println(output[4]);
 		System.out.println(output[5]); // ArrayIndexOutofBoundsException
+		
+		
 		
 		
 	}
