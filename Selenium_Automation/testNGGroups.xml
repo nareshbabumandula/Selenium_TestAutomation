@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+<test name="TestNG Parallel Execution">
+  <groups>
+    <run>
+      <include name="smoke"/>
+    </run>
+  </groups>
+ 
+  <classes>
+    <class name="com.selenium.scripts"/>
+  </classes>
+</test>
+</suite> <!-- Suite -->
+
