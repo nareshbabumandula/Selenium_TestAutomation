@@ -30,7 +30,7 @@ public class ImageTest extends BaseClass{
 			Thread.sleep(2000);
 			Assert.assertEquals(testimonial.isDisplayed(), true, "Testimonial image is not displayed");
 			blnTestimonial=true;
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			if(blnTestimonial){

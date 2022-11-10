@@ -36,7 +36,7 @@ public class TextboxTest extends BaseClass{
 
 			System.out.println("Value entered in the username field is : " + actUsername);
 			Assert.assertEquals(actUsername, "priyanka", "Actual username is not same as expected");
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			if(actUsername.equals("priyanka")){
