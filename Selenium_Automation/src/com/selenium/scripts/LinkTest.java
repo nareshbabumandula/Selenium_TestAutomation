@@ -55,7 +55,6 @@ public class LinkTest extends BaseClass{
 					driver.close();
 				}
 			}
-			
 			driver.switchTo().window(mainwindow);
 			driver.navigate().refresh();
 			System.out.println(driver.getCurrentUrl());

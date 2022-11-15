@@ -8,6 +8,16 @@ public class LoopsTest {
 		}
 	}
 	
+	void evenorOddExample() {
+		for (int i = 1; i < 100; i++) {
+			if(i%2==0) {
+				System.out.println(i + " : is an even number");
+			}else {
+				System.out.println(i + " : is an odd number");
+			}
+		}
+	}
+	
 	void enhancedForLoopExample() {
 		int numbers[] = {10,20,30,40,50,60};
 		String names[] = {"padma","saran","vikas","raju","akhil", "priyanka","priyaveena"};
@@ -45,6 +55,7 @@ public class LoopsTest {
 		lt.enhancedForLoopExample();
 		lt.whileloopExample();
 		lt.doWhileLoopExample();
+		lt.evenorOddExample();
 
 	}
 
