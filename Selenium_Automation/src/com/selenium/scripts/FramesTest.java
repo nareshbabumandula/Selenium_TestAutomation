@@ -15,35 +15,32 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ActionsTest extends BaseClass{
+public class FramesTest extends BaseClass{
 
 	WebDriver driver;
 
 	@Test(groups = {"smoke"})
-	public void menuMethods() throws InterruptedException {
+	public void frameMethods() throws InterruptedException {
 		boolean bFlag=false;
 		try {
-			WebElement addons = driver.findElement(By.xpath("//div[contains(text(),'Add-ons')]"));
-	
-			Actions action = new Actions(driver);
-			action.moveToElement(addons).click().perform();		
-			//action.click(addons).perform();
-			// Explicit wait
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")));
-						
-			boolean extraseat = driver.findElement(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")).isDisplayed();
-			System.out.println(extraseat);
-			driver.findElement(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")).click();
+			WebElement autoComplete = driver.findElement(By.linkText("Autocomplete"));
+			autoComplete.click();
+			//driver.switchTo().frame(0); // Switches to first most frame in the html hierarchy
+			//driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='demo-frame']")));
+			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='/resources/demos/autocomplete/default.html']")));
+			driver.findElement(By.id("tags")).sendKeys("selenium");
+			Thread.sleep(3000);
+			driver.switchTo().defaultContent(); // Switches out from the frame
+			driver.findElement(By.linkText("Draggable")).click();
 			Thread.sleep(3000);
 			bFlag=true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			if(bFlag){
-				test.log(LogStatus.PASS, "Successfully hovered the mouse on menu");
+				test.log(LogStatus.PASS, "Successfully entered the value in tags textbox");
 			}else{
-				test.log(LogStatus.FAIL, "Failed to hover the mouse on menu");
+				test.log(LogStatus.FAIL, "Failed to enter value in tags textbox");
 			}
 		}
 		
@@ -53,10 +50,10 @@ public class ActionsTest extends BaseClass{
 	public void launchBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
-		test = report.startTest("EGW_TC005");
+		test = report.startTest("EGW_TC006");
 		System.setProperty("webdriver.chrome.driver", "./browsers/chromedriver.exe");
 		driver = new ChromeDriver(options);
-		driver.get("https://www.spicejet.com/");
+		driver.get("https://www.jqueryui.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // Implicit wait
 	}
