@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ActionsTest extends BaseClass{
+public class DragandDropTest extends BaseClass{
 
 	WebDriver driver;
 
@@ -23,18 +23,12 @@ public class ActionsTest extends BaseClass{
 	public void menuMethods() throws InterruptedException {
 		boolean bFlag=false;
 		try {
-			WebElement addons = driver.findElement(By.xpath("//div[contains(text(),'Add-ons')]"));
-	
+			WebElement draggable = driver.findElement(By.linkText("Draggable"));
+			draggable.click();
+			driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+			WebElement drag = driver.findElement(By.id("draggable"));
 			Actions action = new Actions(driver);
-			action.moveToElement(addons).click().perform();		
-			//action.click(addons).perform();
-			// Explicit wait
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")));
-						
-			boolean extraseat = driver.findElement(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")).isDisplayed();
-			System.out.println(extraseat);
-			driver.findElement(By.xpath("(//div[contains(text(),'Extra Seat')])[1]")).click();
+			action.dragAndDropBy(drag,300, 150).perform();
 			Thread.sleep(3000);
 			bFlag=true;
 		} catch (Exception e) {
@@ -53,10 +47,10 @@ public class ActionsTest extends BaseClass{
 	public void launchBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
-		test = report.startTest("EGW_TC005");
+		test = report.startTest("EGW_TC006");
 		System.setProperty("webdriver.chrome.driver", "./browsers/chromedriver.exe");
 		driver = new ChromeDriver(options);
-		driver.get("https://www.spicejet.com/");
+		driver.get("https://www.jqueryui.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // Implicit wait
 	}
