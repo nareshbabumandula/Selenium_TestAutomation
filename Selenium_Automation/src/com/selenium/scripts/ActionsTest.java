@@ -1,7 +1,11 @@
 package com.selenium.scripts;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,14 +22,14 @@ import com.relevantcodes.extentreports.LogStatus;
 public class ActionsTest extends BaseClass{
 
 	WebDriver driver;
-
+	
 	@Test(groups = {"smoke"})
 	public void menuMethods() throws InterruptedException {
 		boolean bFlag=false;
+				
 		try {
-			WebElement addons = driver.findElement(By.xpath("//div[contains(text(),'Add-ons')]"));
-	
 			Actions action = new Actions(driver);
+			WebElement addons = driver.findElement(By.xpath("//div[contains(text(),'Add-ons')]"));
 			action.moveToElement(addons).click().perform();		
 			//action.click(addons).perform();
 			// Explicit wait
@@ -46,6 +50,18 @@ public class ActionsTest extends BaseClass{
 				test.log(LogStatus.FAIL, "Failed to hover the mouse on menu");
 			}
 		}
+		
+	}
+	
+	@Test(groups = {"smoke"})
+	void actionsmethods() throws InterruptedException, AWTException {
+		Actions action = new Actions(driver);
+		WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'public/v1.svg')]"));
+		action.contextClick(logo).perform();
+		Thread.sleep(3000);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(3000);
 		
 	}
 

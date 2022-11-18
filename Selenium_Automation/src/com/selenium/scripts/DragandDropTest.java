@@ -20,7 +20,8 @@ public class DragandDropTest extends BaseClass{
 	WebDriver driver;
 
 	@Test(groups = {"smoke"})
-	public void menuMethods() throws InterruptedException {
+	public void draganddropBy() throws InterruptedException {
+
 		boolean bFlag=false;
 		try {
 			WebElement draggable = driver.findElement(By.linkText("Draggable"));
@@ -35,9 +36,36 @@ public class DragandDropTest extends BaseClass{
 			e.printStackTrace();
 		}finally {
 			if(bFlag){
-				test.log(LogStatus.PASS, "Successfully hovered the mouse on menu");
+				test.log(LogStatus.PASS, "Successfully dragged the object");
 			}else{
-				test.log(LogStatus.FAIL, "Failed to hover the mouse on menu");
+				test.log(LogStatus.FAIL, "Failed to drag the object");
+			}
+		}
+		
+	}
+	
+	@Test(groups = {"smoke"})
+	public void draganddrop() throws InterruptedException {
+		
+		boolean droppedFlag=false;
+		try {
+			WebElement draggable = driver.findElement(By.linkText("Droppable"));
+			draggable.click();
+			driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+			WebElement source = driver.findElement(By.xpath("//p[contains(text(), 'Drag me to my target')]"));
+			WebElement destination = driver.findElement(By.id("droppable")); 
+			Actions action = new Actions(driver);
+			action.dragAndDrop(source, destination).perform();
+			Thread.sleep(3000);
+			droppedFlag = driver.findElement(By.xpath("//p[contains(text(), 'Dropped!')]")).isDisplayed();
+			driver.switchTo().defaultContent();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(droppedFlag){
+				test.log(LogStatus.PASS, "Successfully dragged and dropped the object");
+			}else{
+				test.log(LogStatus.FAIL, "Failed to drag and drop the object");
 			}
 		}
 		
