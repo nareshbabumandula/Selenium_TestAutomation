@@ -37,9 +37,6 @@ public class JavaScriptExecutorTest extends BaseClass{
 		String actUsername="";
 		try {
 			
-			WebElement username = driver.findElement(By.id("user"));
-			//username.sendKeys("priyanka");
-			
 			// Finding an element using the selenium webdriver and highlighting it.
 			JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
 			jsExecutor.executeScript("history.go(0)"); // Page Refresh
@@ -55,7 +52,8 @@ public class JavaScriptExecutorTest extends BaseClass{
 			//To get the URL of a webpage
 			String url=  jsExecutor.executeScript("return document.URL;").toString();
 			System.out.println(url);
-			
+
+			WebElement username = driver.findElement(By.id("user"));
 			jsExecutor.executeScript("arguments[0].style.border='2px solid red'", username); 
 			jsExecutor.executeScript("arguments[0].style.background='yellow'", username);  
 			Thread.sleep(2000);
