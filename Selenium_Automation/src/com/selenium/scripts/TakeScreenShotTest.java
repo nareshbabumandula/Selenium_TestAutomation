@@ -2,7 +2,6 @@ package com.selenium.scripts;
 
 import java.io.File;
 import java.time.Duration;
-import java.util.logging.FileHandler;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
