@@ -1,6 +1,10 @@
 package com.java.collections;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * HashSet implements Set interface

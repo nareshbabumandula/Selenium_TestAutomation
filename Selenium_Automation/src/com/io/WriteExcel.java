@@ -1,10 +1,8 @@
 package com.io;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import jxl.Sheet;
+
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 import jxl.write.Label;

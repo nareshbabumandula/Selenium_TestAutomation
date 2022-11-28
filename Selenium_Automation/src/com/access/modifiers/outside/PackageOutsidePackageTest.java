@@ -1,7 +1,5 @@
 package com.access.modifiers.outside;
 
-import com.access.modifiers.PackageTest;
-
 public class PackageOutsidePackageTest {
 		
 	public static void main(String[] args) {
