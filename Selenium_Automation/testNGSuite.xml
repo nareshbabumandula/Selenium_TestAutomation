@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
-<parameter name="firstname"  value="Michael"/>
- <test name="Test">
+  <test name="Test">
     <classes>
-      <class name="com.selenium.scripts.WebTableTest"/>
+      <class name="com.testng.annotations.demo.TestNGAnnotations"/>
+      <class name="com.testng.annotations.demo.Generic"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
