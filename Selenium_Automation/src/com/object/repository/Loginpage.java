@@ -1,9 +1,13 @@
 package com.object.repository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Loginpage {
+	
+	// Object Repository with Page Object Model
+	public static By user = By.id("user");
 	
 	// Object Repository with Page Factory Pattern
 	@FindBy(id="user")
